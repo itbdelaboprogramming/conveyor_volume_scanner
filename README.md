@@ -11,13 +11,13 @@ This project is a real-time computer vision script designed for OAK-D stereo cam
 - IR Laser Support: Automatically attempts to enable the IR laser dot projector for better depth accuracy on flat/textureless surfaces.
 
 ## Hardware Requirements
-- Camera: Luxonis OAK-D, OAK-D Pro, or OAK-D S2 (Pro version recommended for IR depth mapping).
+- Camera: Luxonis OAK-D Pro.
 - Connection: USB 3.0 cable providing sufficient power and bandwidth.
 
 ## Installation
-Ensure you have Python 3.7+ installed. You can install all necessary dependencies using the following one-line command:
-Bash
+Ensure you have Python 3.7+ installed. You can install all necessary dependencies using the following one-line command. It is recommended to create a python virtual environment.
 ```
+python3 -m venv depthai-env
 pip install depthai opencv-python numpy matplotlib
 ```
 
@@ -25,6 +25,7 @@ pip install depthai opencv-python numpy matplotlib
 1. Connect your OAK-D camera to your computer.
 2. Run the script:
     ```
+    source depthai-env/bin/activate
     python conveyor_volume_scanner_v3.py
     ```
 3. Focus the camera: Ensure the green/white bounding boxes are centered on the conveyor belt where objects will pass.
