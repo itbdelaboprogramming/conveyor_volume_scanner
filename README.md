@@ -15,9 +15,16 @@ This project is a real-time computer vision script designed for OAK-D stereo cam
 - Connection: USB 3.0 cable providing sufficient power and bandwidth.
 
 ## Installation
+If you are using Ubuntu, you need to setup udev rules first. Run the following command to grant permission to communicate with the Luxonis VPU via USB.
+```
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"' | sudo tee /etc/udev/rules.d/80-movidius.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
 Ensure you have Python 3.7+ installed. You can install all necessary dependencies using the following one-line command. It is recommended to create a python virtual environment.
 ```
+python3 -m pip install --upgrade pip
 python3 -m venv depthai-env
+source depthai-venv/bin/activate
 pip install depthai opencv-python numpy matplotlib
 ```
 
